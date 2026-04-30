@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete Account - Endless Front</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg:          #0f1117;
+      --surface:     #1a1d27;
+      --border:      #2a2e3d;
+      --accent:      #c8a96e;
+      --text:        #d4d8e8;
+      --text-muted:  #7a7f96;
+      --text-strong: #eceef6;
+      --tag-bg:      #1e2235;
+      --tag-border:  #3a3f58;
+      --radius:      8px;
+      --max-w:       720px;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    .wrapper {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .game-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--text-strong);
+      line-height: 1.25;
+      margin-bottom: 0.6rem;
+    }
+
+    h2 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-strong);
+      margin-bottom: 0.85rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .meta span + span::before {
+      content: " | ";
+    }
+
+    .notice,
+    .panel {
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .notice {
+      border-left: 3px solid var(--accent);
+    }
+
+    section {
+      margin-bottom: 2.25rem;
+    }
+
+    p {
+      margin-bottom: 0.9rem;
+    }
+
+    ul, ol {
+      padding-left: 1.4rem;
+      margin-bottom: 0.9rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: var(--text-strong);
+    }
+
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.92em;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 0.4rem;
+      background: var(--accent);
+      color: #17130d;
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .cta:hover {
+      color: #17130d;
+      text-decoration: none;
+      filter: brightness(1.04);
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    footer strong {
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <header>
+    <div class="game-label">Endless Front</div>
+    <h1>Delete Account Request</h1>
+    <p class="meta">
+      <span>Package: <code>eu.marin.endlessfront</code></span>
+      <span>Last reviewed: 30 April 2026</span>
+    </p>
+  </header>
+
+  <div class="notice">
+    Use this page if you want to request deletion of your Endless Front account and associated cloud data.
+    This page applies to the game published by <strong>Marin Brouwers</strong> on Google Play.
+  </div>
+
+  <section id="how">
+    <h2>1. How to request deletion</h2>
+    <p>
+      Send an email to
+      <a href="mailto:grimportchronicle@gmail.com?subject=Endless%20Front%20Account%20Deletion%20Request">grimportchronicle@gmail.com</a>
+      with the subject line:
+    </p>
+    <div class="panel">
+      <strong>Endless Front Account Deletion Request</strong>
+    </div>
+    <p>
+      Please include the Google account email address you used to sign in to Endless Front, so the correct
+      account can be identified.
+    </p>
+    <a class="cta" href="mailto:grimportchronicle@gmail.com?subject=Endless%20Front%20Account%20Deletion%20Request">
+      Send deletion request
+    </a>
+  </section>
+
+  <section id="deleted">
+    <h2>2. What will be deleted</h2>
+    <p>
+      If your request is accepted and processed, the developer will delete the cloud data associated with your
+      Endless Front account, including:
+    </p>
+    <ul>
+      <li>your player profile row</li>
+      <li>your synced game state / cloud save data</li>
+      <li>your leaderboard entry</li>
+      <li>your authoritative progression state and related command history used to operate the game account</li>
+    </ul>
+  </section>
+
+  <section id="not-deleted">
+    <h2>3. What may not be deleted immediately</h2>
+    <p>
+      The developer cannot remotely erase data stored only on your own device. To remove local app data, you
+      should also uninstall the app or clear its data from Android settings.
+    </p>
+    <p>
+      Minimal security, fraud-prevention, or support records related to the deletion request itself may be kept
+      for up to <strong>30 days</strong> after the request is completed, unless a longer retention period is
+      required by law or needed to resolve abuse, chargeback, or security issues.
+    </p>
+  </section>
+
+  <section id="timing">
+    <h2>4. Processing time</h2>
+    <p>
+      Deletion requests are normally reviewed and processed within <strong>30 days</strong>.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>5. Contact</h2>
+    <p>
+      <strong>Marin Brouwers</strong><br />
+      Belgium<br />
+      <a href="mailto:grimportchronicle@gmail.com">grimportchronicle@gmail.com</a>
+    </p>
+    <p>
+      Privacy policy:
+      <a href="https://marinbrouwers.github.io/EndlessFront/PrivacyPolicy.html" target="_blank" rel="noopener">
+        https://marinbrouwers.github.io/EndlessFront/PrivacyPolicy.html
+      </a>
+    </p>
+  </section>
+
+  <footer>
+    <p><strong>Endless Front</strong> - Account deletion request page</p>
+  </footer>
+
+</div>
+</body>
+</html>
