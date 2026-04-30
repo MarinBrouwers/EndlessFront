@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — Endless Front</title>
+  <title>Privacy Policy - Endless Front</title>
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -16,7 +16,6 @@
       --surface:     #1a1d27;
       --border:      #2a2e3d;
       --accent:      #c8a96e;
-      --accent-dim:  #9b7e4a;
       --text:        #d4d8e8;
       --text-muted:  #7a7f96;
       --text-strong: #eceef6;
@@ -29,7 +28,7 @@
     body {
       background-color: var(--bg);
       color: var(--text);
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
       font-size: 16px;
       line-height: 1.7;
       padding: 2rem 1.25rem 4rem;
@@ -40,7 +39,6 @@
       margin: 0 auto;
     }
 
-    /* ── Header ── */
     header {
       border-bottom: 1px solid var(--border);
       padding-bottom: 1.5rem;
@@ -71,10 +69,9 @@
     }
 
     .meta span + span::before {
-      content: ' · ';
+      content: " | ";
     }
 
-    /* ── Notice banner ── */
     .notice {
       background: var(--tag-bg);
       border: 1px solid var(--tag-border);
@@ -86,7 +83,6 @@
       color: var(--text);
     }
 
-    /* ── Sections ── */
     section {
       margin-bottom: 2.75rem;
     }
@@ -108,7 +104,7 @@
       margin-bottom: 0;
     }
 
-    ul, ol {
+    ul {
       padding-left: 1.4rem;
       margin-bottom: 0.9rem;
     }
@@ -117,7 +113,6 @@
       margin-bottom: 0.4rem;
     }
 
-    /* ── Data table ── */
     .data-table {
       width: 100%;
       border-collapse: collapse;
@@ -148,7 +143,6 @@
       background: var(--tag-bg);
     }
 
-    /* ── Rights grid ── */
     .rights-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -182,7 +176,6 @@
       margin: 0;
     }
 
-    /* ── Tag / badge ── */
     .badge {
       display: inline-block;
       background: var(--tag-bg);
@@ -195,7 +188,6 @@
       vertical-align: middle;
     }
 
-    /* ── Links ── */
     a {
       color: var(--accent);
       text-decoration: none;
@@ -206,7 +198,11 @@
       color: var(--text-strong);
     }
 
-    /* ── Footer ── */
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.92em;
+    }
+
     footer {
       margin-top: 3rem;
       padding-top: 1.5rem;
@@ -225,283 +221,275 @@
 <body>
 <div class="wrapper">
 
-  <!-- ══ HEADER ══ -->
   <header>
     <div class="game-label">Endless Front</div>
     <h1>Privacy Policy</h1>
     <p class="meta">
       <span>Package: <code>eu.marin.endlessfront</code></span>
-      <span>Effective: 27 April 2026</span>
-      <span>Last reviewed: 27 April 2026</span>
+      <span>Effective: 30 April 2026</span>
+      <span>Last reviewed: 30 April 2026</span>
     </p>
   </header>
 
-  <!-- ══ SUMMARY NOTICE ══ -->
   <div class="notice">
-    <strong>Short version:</strong> Endless Front does not collect, store, or transmit any personal data itself.
-    Your game progress lives only on your device. The game shows ads through Google AdMob, which may process
-    certain device data to serve those ads. You control ad personalisation through the consent screen shown at
-    first launch.
+    <strong>Short version:</strong> Endless Front is no longer a local-only game. The current version uses
+    Google Sign-In and a Supabase backend to create an account-bound profile, sync game progress, and support
+    leaderboard and integrity features. The app also stores a local cache on your device. If you enable
+    rewarded ads, Google AdMob may process device and advertising data. If you keep rewarded ads off, the app
+    does not request rewarded ads.
   </div>
 
-  <!-- ══ 1. WHO IS RESPONSIBLE ══ -->
   <section id="controller">
     <h2>1. Who is responsible for this app?</h2>
     <p>
-      Endless Front is developed and published by <strong>Marin Brouwers (MB)</strong>, an individual developer based
-      in Belgium. Under the EU General Data Protection Regulation (GDPR, Regulation 2016/679), MB
-      acts as the <em>data controller</em> for any personal data processed in connection with this app.
+      Endless Front is developed and published by <strong>Marin Brouwers (MB)</strong>, an individual developer
+      based in Belgium. Under the EU General Data Protection Regulation (GDPR, Regulation 2016/679), MB acts
+      as the <em>data controller</em> for personal data processed for the operation of the game.
     </p>
     <p>
       Contact:<br />
       <strong>Email:</strong> <a href="mailto:grimportchronicle@gmail.com">grimportchronicle@gmail.com</a><br />
       <strong>Privacy policy URL:</strong>
-      <a href="https://marinbrouwers.github.io/EndlessFront/" target="_blank" rel="noopener">
-        https://marinbrouwers.github.io/EndlessFront/
+      <a href="https://marinbrouwers.github.io/EndlessFront/privacy_policy.html" target="_blank" rel="noopener">
+        https://marinbrouwers.github.io/EndlessFront/privacy_policy.html
       </a>
     </p>
   </section>
 
-  <!-- ══ 2. DATA COLLECTED ══ -->
+  <section id="app-model">
+    <h2>2. How the app currently works</h2>
+    <p>
+      Endless Front currently runs as an <strong>account-bound game</strong>. A Google account sign-in is
+      required to access the live progression path. The app uses:
+    </p>
+    <ul>
+      <li><strong>Google Sign-In</strong> to let you authenticate with your Google account.</li>
+      <li><strong>Supabase Auth</strong> to create and manage your in-game authenticated session.</li>
+      <li><strong>Supabase database tables and RPCs</strong> to store player profile data, synced game state, command logs, authoritative state, and leaderboard rows.</li>
+      <li><strong>Local device storage</strong> to keep a cached save, settings, and privacy/ad choices on your device.</li>
+      <li><strong>Google AdMob</strong> for optional rewarded ads, only if you enable them.</li>
+    </ul>
+    <p>
+      The app does <strong>not</strong> currently include a separate developer-controlled analytics SDK or crash
+      reporting SDK, but it does process account, save-sync, and leaderboard data through Supabase and related
+      Google sign-in infrastructure.
+    </p>
+  </section>
+
   <section id="data-collected">
-    <h2>2. What data is collected and by whom?</h2>
-
-    <p>
-      The Developer does <strong>not</strong> collect any personal data. There are no user
-      accounts, no login, no analytics SDK, and no back-end server. All game progress — including unlocked units,
-      currency, and battle records — is saved locally on your device and never leaves it.
-    </p>
-
-    <p>
-      The only third party that may process data in connection with this app is <strong>Google AdMob</strong>
-      (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA), which provides the rewarded
-      advertisement functionality described below.
-    </p>
+    <h2>3. What data is collected and by whom?</h2>
 
     <table class="data-table" aria-label="Data collected by category">
       <thead>
         <tr>
           <th>Category</th>
-          <th>Who collects it</th>
+          <th>Who processes it</th>
           <th>Purpose</th>
           <th>Stored where</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Game progress (levels, currency, settings)</td>
-          <td>No one — stays on your device</td>
-          <td>Gameplay continuity</td>
+          <td>Google account sign-in data (such as your Google email and Google account identity token)</td>
+          <td>Google, then Supabase Auth / Developer</td>
+          <td>Sign-in, account linking, session creation</td>
+          <td>Google systems, Supabase Auth, local session storage</td>
+        </tr>
+        <tr>
+          <td>Player account identifiers (Supabase user ID, email, display name)</td>
+          <td>Developer via Supabase</td>
+          <td>Profile creation, sign-in continuity, leaderboard identity</td>
+          <td>Supabase</td>
+        </tr>
+        <tr>
+          <td>Game progress and synced state (front progress, units, upgrades, resources, command points, timestamps, settings needed for sync)</td>
+          <td>Developer via Supabase</td>
+          <td>Cloud save, restore, cross-session continuity, server reconciliation</td>
+          <td>Supabase and local device cache</td>
+        </tr>
+        <tr>
+          <td>Gameplay command and integrity records (for example recruit, upgrade, attack, retreat, rewarded-boost claims, command sequence numbers, security events)</td>
+          <td>Developer via Supabase</td>
+          <td>Authoritative state replay, abuse review, anti-tamper checks, leaderboard integrity</td>
+          <td>Supabase</td>
+        </tr>
+        <tr>
+          <td>Leaderboard data (display name, rank score, peak front, peak sector, command points)</td>
+          <td>Developer via Supabase</td>
+          <td>Leaderboard display and ranking</td>
+          <td>Supabase</td>
+        </tr>
+        <tr>
+          <td>Local app data (cached save, auth session, privacy-policy acknowledgement, rewarded-ads preference, audio/settings data)</td>
+          <td>No third party by default - stays on your device unless synced data is included in cloud save</td>
+          <td>Performance, continuity, local preferences</td>
           <td>Device local storage only</td>
         </tr>
         <tr>
-          <td>Advertising ID / device identifiers</td>
-          <td>Google AdMob (if consent given)</td>
-          <td>Personalised ads</td>
-          <td>Google's servers</td>
-        </tr>
-        <tr>
-          <td>IP address / approximate location</td>
-          <td>Google AdMob</td>
-          <td>Ad delivery, fraud prevention</td>
-          <td>Google's servers</td>
-        </tr>
-        <tr>
-          <td>Ad interaction data (views, clicks)</td>
-          <td>Google AdMob</td>
-          <td>Ad performance reporting</td>
-          <td>Google's servers</td>
-        </tr>
-        <tr>
-          <td>Device type, OS version</td>
-          <td>Google AdMob</td>
-          <td>Ad compatibility and targeting</td>
-          <td>Google's servers</td>
+          <td>Rewarded ad data (advertising ID or other identifiers, IP address, device type, OS version, ad interaction data)</td>
+          <td>Google AdMob, if rewarded ads are enabled</td>
+          <td>Ad delivery, measurement, fraud prevention, ad operations</td>
+          <td>Google systems</td>
         </tr>
       </tbody>
     </table>
 
     <p>
-      For a full list of data Google AdMob collects and how it is used, please refer to
-      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>
-      and
-      <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">
-        Google AdMob's data practices page
-      </a>.
+      Endless Front currently creates a player profile row and cloud save row for authenticated users, and it
+      submits gameplay command records to support backend validation and leaderboard integrity.
     </p>
   </section>
 
-  <!-- ══ 3. ADS AND CONSENT ══ -->
+  <section id="purposes">
+    <h2>4. Why this data is used</h2>
+    <ul>
+      <li><strong>Authentication:</strong> to let you sign in with Google and keep you signed in.</li>
+      <li><strong>Cloud progression:</strong> to save, restore, and sync your game state.</li>
+      <li><strong>Leaderboard operation:</strong> to show ranking data tied to an account.</li>
+      <li><strong>Security and anti-tamper:</strong> to review commands, validate state, and protect leaderboard integrity.</li>
+      <li><strong>Local preferences:</strong> to remember settings such as privacy acknowledgement and whether rewarded ads are enabled.</li>
+      <li><strong>Rewarded advertising:</strong> to load and show optional rewarded ads if you turn that feature on.</li>
+    </ul>
+  </section>
+
   <section id="ads-consent">
-    <h2>3. Rewarded ads and your consent</h2>
-
+    <h2>5. Rewarded ads and privacy choices</h2>
     <p>
-      Endless Front contains optional rewarded video ads. Watching an ad is always your choice — you are never
-      forced to watch one to continue playing. The rewards available through ads are:
+      Rewarded ads in Endless Front are <strong>optional</strong>. On first run, the app asks you to read the
+      privacy policy and choose whether rewarded ads should be available. This choice is stored locally on your
+      device.
     </p>
-
-    <ul>
-      <li><strong>Supply Surge</strong> — bonus resources for your army</li>
-      <li><strong>Battle Surge</strong> — a temporary combat boost</li>
-      <li><strong>Field Promotion</strong> — an accelerated unit upgrade</li>
-      <li><strong>Retreat Bonus</strong> — resources recovered after a tactical retreat</li>
-    </ul>
-
     <p>
-      Ads are served by Google AdMob. When you first open the app, a consent screen powered by
-      <strong>Google's User Messaging Platform (UMP)</strong> is displayed. This screen explains what data
-      AdMob may use and asks for your permission before any personalised advertising takes place.
+      <strong>If rewarded ads are off:</strong> the app does not request rewarded ads from Google AdMob.
     </p>
-
     <p>
-      <strong>If you give consent:</strong> Google may use your Advertising ID and other device signals to show
-      ads that are more relevant to you. This is processed under GDPR Art. 6(1)(a) — consent.
+      <strong>If rewarded ads are on:</strong> the app may request rewarded ads from Google AdMob. Google may
+      process device and advertising-related data according to Google's own policies and product configuration.
+      You can change this choice later from the in-app privacy options screen.
     </p>
-
     <p>
-      <strong>If you decline or withdraw consent:</strong> Google will serve non-personalised ads instead.
-      Non-personalised ads do not use your Advertising ID for targeting, though Google may still process
-      limited contextual data (such as your IP address and general device type) for ad delivery and fraud
-      prevention, based on its legitimate interests.
-    </p>
-
-    <p>
-      You can change your consent choice at any time. On Android, go to
-      <strong>Settings &rarr; Google &rarr; Ads</strong> to reset or opt out of ads personalisation, or
-      use the consent management option within the app if available.
+      Rewarded ad-related benefits currently include features such as <strong>Supply Surge</strong>,
+      <strong>Battle Surge</strong>, <strong>Reinforcements</strong>, and <strong>Retreat Bonus</strong>.
     </p>
   </section>
 
-  <!-- ══ 4. LEGAL BASES ══ -->
   <section id="legal-bases">
-    <h2>4. Legal basis for processing (GDPR)</h2>
-
+    <h2>6. Legal basis for processing (GDPR)</h2>
     <p>
-      Because the developer does not process personal data directly, the legal bases below apply specifically
-      to Google AdMob's processing as a third-party service operating within the app.
+      The main legal bases relied on by the developer are:
     </p>
-
     <ul>
-      <li>
-        <strong>Consent — GDPR Art. 6(1)(a):</strong> personalised ad targeting using your Advertising ID,
-        collected only when you have given explicit consent through the UMP consent screen.
-      </li>
-      <li>
-        <strong>Legitimate interests — GDPR Art. 6(1)(f):</strong> basic ad delivery, fraud detection, and
-        non-personalised advertising, where Google has determined these purposes are proportionate and do not
-        override your fundamental rights.
-      </li>
+      <li><strong>GDPR Art. 6(1)(b) - performance of a contract / steps at your request:</strong> for account sign-in, session handling, cloud save, synced progression, and leaderboard functionality.</li>
+      <li><strong>GDPR Art. 6(1)(f) - legitimate interests:</strong> for service security, abuse prevention, anti-tamper review, and maintaining fair leaderboard integrity.</li>
     </ul>
-
     <p>
-      Under Belgian law, the Belgian Data Protection Authority (Gegevensbeschermingsautoriteit / Autorité de
-      protection des données — GBA/APD) oversees GDPR enforcement in Belgium. Belgian users may also consult
-      the
-      <a href="https://www.gegevensbeschermingsautoriteit.be" target="_blank" rel="noopener">GBA website</a>
-      for guidance or to file a complaint.
+      Google may act as an independent controller for parts of Google Sign-In and AdMob processing. For those
+      services, Google's own privacy terms and legal bases also apply.
     </p>
   </section>
 
-  <!-- ══ 5. DATA TRANSFERS ══ -->
+  <section id="providers">
+    <h2>7. Third-party service providers</h2>
+    <p>
+      Endless Front currently depends on the following core third-party services:
+    </p>
+    <ul>
+      <li><strong>Google Sign-In</strong> - for account authentication.</li>
+      <li><strong>Supabase</strong> - for authentication, database-backed player profiles, synced save data, and backend state/leaderboard infrastructure.</li>
+      <li><strong>Google AdMob</strong> - for optional rewarded advertising.</li>
+    </ul>
+    <p>
+      Useful third-party information pages:
+    </p>
+    <ul>
+      <li><a href="https://supabase.com/docs/guides/auth/users" target="_blank" rel="noopener">Supabase Auth user data documentation</a></li>
+      <li><a href="https://supabase.com/docs/guides/database/secure-data" target="_blank" rel="noopener">Supabase data security documentation</a></li>
+      <li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob data practices</a></li>
+      <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+    </ul>
+  </section>
+
   <section id="international-transfers">
-    <h2>5. International data transfers</h2>
-
+    <h2>8. Where data is stored and international transfers</h2>
     <p>
-      Google LLC is based in the United States. When Google AdMob processes data, it may be transferred to and
-      stored on servers located outside the European Economic Area (EEA). Google relies on the
-      <a href="https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/eu-us-data-transfers_en"
-         target="_blank" rel="noopener">EU–US Data Privacy Framework</a> (adequacy decision, July 2023)
-      and Standard Contractual Clauses (SCCs) approved by the European Commission to ensure your data remains
-      protected to EEA standards when transferred internationally.
+      The Endless Front Supabase project is configured in the <strong>European region</strong>. Supabase states
+      that project data remains within the region selected when the project is created.
+    </p>
+    <p>
+      Google services used for sign-in and advertising may process data outside Belgium or outside the EEA.
+      If you use Google Sign-In or enable rewarded ads, your data may therefore be transferred through Google
+      systems in accordance with Google's own contractual and legal safeguards.
     </p>
   </section>
 
-  <!-- ══ 6. DATA RETENTION ══ -->
   <section id="retention">
-    <h2>6. Data retention</h2>
-
+    <h2>9. Data retention</h2>
     <p>
-      <strong>Game data (progress, settings):</strong> stored locally on your device indefinitely, or until
-      you uninstall the app or clear the app's data through Android's app management settings. The developer
-      has no access to this data and cannot delete it remotely.
+      <strong>Local device data:</strong> remains on your device until you clear app data or uninstall the app.
     </p>
-
     <p>
-      <strong>Ad-related data:</strong> Google AdMob retains advertising data according to its own retention
-      policies. For details, see
-      <a href="https://policies.google.com/technologies/retention" target="_blank" rel="noopener">
-        Google's data retention schedule
-      </a>.
+      <strong>Account, profile, synced save, command, and leaderboard data:</strong> is retained in Supabase
+      for as long as your account remains active, and for reasonable backup, integrity, or fraud-review periods
+      as needed to operate the game and investigate abuse.
+    </p>
+    <p>
+      <strong>Rewarded ad data:</strong> is retained according to Google's own retention practices.
     </p>
   </section>
 
-  <!-- ══ 7. YOUR RIGHTS ══ -->
   <section id="rights">
-    <h2>7. Your rights under GDPR</h2>
-
+    <h2>10. Your rights under GDPR</h2>
     <p>
-      As a person in the EU/EEA, you have the following rights regarding personal data. Because the developer
-      does not process personal data, most of these rights are exercised directly with Google in relation to
-      AdMob data.
+      If you are in the EU/EEA, you may have rights including:
     </p>
-
     <div class="rights-grid">
       <div class="right-card">
         <div class="right-title">Right of access <span class="badge">Art. 15</span></div>
-        <p>Request a copy of the personal data held about you.</p>
+        <p>Ask what account or gameplay data is held about you.</p>
       </div>
       <div class="right-card">
         <div class="right-title">Right to rectification <span class="badge">Art. 16</span></div>
-        <p>Ask for inaccurate data to be corrected.</p>
+        <p>Ask for inaccurate personal data to be corrected.</p>
       </div>
       <div class="right-card">
         <div class="right-title">Right to erasure <span class="badge">Art. 17</span></div>
-        <p>Request deletion of your data ("right to be forgotten").</p>
+        <p>Ask for deletion of account-backed data, subject to legal and operational limits.</p>
       </div>
       <div class="right-card">
         <div class="right-title">Right to restriction <span class="badge">Art. 18</span></div>
-        <p>Ask for processing to be restricted in certain circumstances.</p>
+        <p>Ask for certain processing to be restricted.</p>
       </div>
       <div class="right-card">
         <div class="right-title">Right to portability <span class="badge">Art. 20</span></div>
-        <p>Receive your data in a structured, machine-readable format.</p>
+        <p>Ask for the personal data you provided in a portable format where applicable.</p>
       </div>
       <div class="right-card">
         <div class="right-title">Right to object <span class="badge">Art. 21</span></div>
         <p>Object to processing based on legitimate interests.</p>
       </div>
       <div class="right-card">
-        <div class="right-title">Withdraw consent <span class="badge">Art. 7(3)</span></div>
-        <p>Withdraw ad consent at any time — this does not affect past processing.</p>
+        <div class="right-title">Ad choice control</div>
+        <p>Turn rewarded ads off inside the app and use Google's account/ad controls where relevant.</p>
       </div>
       <div class="right-card">
         <div class="right-title">Right to complain <span class="badge">Art. 77</span></div>
-        <p>Lodge a complaint with the GBA/APD or your local supervisory authority.</p>
+        <p>Lodge a complaint with the Belgian supervisory authority or your local authority.</p>
       </div>
     </div>
-
     <p>
-      To exercise rights relating to AdMob data, contact Google directly via
+      For requests about Endless Front account, sync, or leaderboard data, contact
+      <a href="mailto:grimportchronicle@gmail.com">grimportchronicle@gmail.com</a>. Please include the Google
+      account email you used with the game so your data can be identified.
+    </p>
+    <p>
+      For data handled directly by Google, you can also use:
       <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">
         Google's Data and Privacy dashboard
-      </a>
-      or submit a request through
-      <a href="https://support.google.com/policies/contact/general_privacy_form" target="_blank" rel="noopener">
-        Google's privacy support form
       </a>.
     </p>
-
     <p>
-      To exercise rights in relation to anything within the developer's control, or to ask a question about
-      this privacy policy, contact:
-      <a href="mailto:grimportchronicle@gmail.com">grimportchronicle@gmail.com</a>.
-      Requests will be acknowledged and responded to within <strong>30 days</strong> in accordance with
-      GDPR Art. 12(3).
-    </p>
-
-    <p>
-      To file a complaint with the Belgian supervisory authority:<br />
-      <strong>Gegevensbeschermingsautoriteit (GBA) / Autorité de protection des données (APD)</strong><br />
+      Belgian supervisory authority:<br />
+      <strong>Gegevensbeschermingsautoriteit (GBA) / Autorite de protection des donnees (APD)</strong><br />
       Drukpersstraat 35, 1000 Brussels, Belgium<br />
       <a href="https://www.gegevensbeschermingsautoriteit.be" target="_blank" rel="noopener">
         www.gegevensbeschermingsautoriteit.be
@@ -509,79 +497,56 @@
     </p>
   </section>
 
-  <!-- ══ 8. CHILDREN ══ -->
   <section id="children">
-    <h2>8. Children</h2>
-
+    <h2>11. Children</h2>
     <p>
-      Endless Front is not directed at children under the age of 13, and the developer does not knowingly
-      collect any data from children. If you believe a child has been exposed to data collection through this
-      app without appropriate consent, please contact
+      Endless Front is not directed at children under 13. The app currently requires a Google account sign-in,
+      and the developer does not knowingly target children or knowingly collect personal data from children.
+      If you believe this has happened, contact
       <a href="mailto:grimportchronicle@gmail.com">grimportchronicle@gmail.com</a>.
     </p>
-
-    <p>
-      Note that Google AdMob includes its own child-directed treatment settings. The app does not designate
-      itself as child-directed, meaning standard ad serving rules apply.
-    </p>
   </section>
 
-  <!-- ══ 9. SECURITY ══ -->
   <section id="security">
-    <h2>9. Security</h2>
-
+    <h2>12. Security</h2>
     <p>
-      Because no personal data passes through any server controlled by the developer, the attack surface is
-      minimal. Game data on your device is protected by Android's standard application sandboxing. Ad-related
-      data processed by Google is secured according to
-      <a href="https://safety.google/" target="_blank" rel="noopener">Google's security standards</a>,
-      which include encryption in transit and at rest.
+      Local app data is protected by Android's app sandboxing. Supabase-backed data is protected through
+      authenticated access controls and row-level security policies, and the app is being migrated toward a more
+      authoritative backend model for progression integrity. You should still understand that no internet-based
+      system can be guaranteed to be perfectly secure.
     </p>
   </section>
 
-  <!-- ══ 10. CHANGES ══ -->
   <section id="changes">
-    <h2>10. Changes to this policy</h2>
-
+    <h2>13. Changes to this policy</h2>
     <p>
-      This policy may be updated if the app changes — for example, if new features are added that involve
-      data processing. The "Last reviewed" date at the top of this page will always reflect the most recent
-      version. Significant changes will be communicated through an in-app notice or an updated version
-      prompt on the Google Play Store listing.
-    </p>
-
-    <p>
-      Continued use of the app after a policy update constitutes acceptance of the revised terms. If you do
-      not agree with a change, you may uninstall the app at any time.
+      This policy may be updated when the app's authentication, backend, advertising, leaderboard, or data
+      flows change. The "Last reviewed" date at the top of this page will reflect the most recent update.
     </p>
   </section>
 
-  <!-- ══ 11. CONTACT ══ -->
   <section id="contact">
-    <h2>11. Contact</h2>
-
+    <h2>14. Contact</h2>
     <p>
-      For any questions, concerns, or data subject requests, reach out to:
+      For questions, concerns, or privacy requests, contact:
     </p>
-
     <p>
-      <strong>Marin Brouwers (MB)</strong> — Independent Developer, Belgium<br />
+      <strong>Marin Brouwers (MB)</strong> - Independent Developer, Belgium<br />
       <strong>Email:</strong> <a href="mailto:grimportchronicle@gmail.com">grimportchronicle@gmail.com</a><br />
       <strong>App package:</strong> <code>eu.marin.endlessfront</code>
     </p>
   </section>
 
-  <!-- ══ FOOTER ══ -->
   <footer>
     <p>
-      <strong>Endless Front</strong> &mdash; Privacy Policy &mdash; Effective 27 April 2026
+      <strong>Endless Front</strong> - Privacy Policy - Effective 30 April 2026
     </p>
-    <p style="margin-top:0.4rem;">
-      MB, Belgium &middot;
+    <p style="margin-top: 0.4rem;">
+      MB, Belgium -
       <a href="mailto:grimportchronicle@gmail.com">grimportchronicle@gmail.com</a>
     </p>
-    <p style="margin-top:0.4rem;">
-      Compliant with GDPR (Regulation 2016/679) and the Belgian Data Protection Act (WOG 30 July 2018)
+    <p style="margin-top: 0.4rem;">
+      This document is intended to describe the current technical behavior of the app. It is not legal advice.
     </p>
   </footer>
 
